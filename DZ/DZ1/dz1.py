@@ -2,15 +2,19 @@ print("!!!Задача 2: Найдите сумму цифр трехзначн�
 print()
 number = input("Введите трехзначное число: ")
 def sum(number):
-    if (int(number) < 0):
-        number = number[1:len(number)]
-    if (99 < int(number) < 1000):
-        sum = 0
-        for i in number:
-            sum += int(i)
-        return print(f'Результат: {sum}')
-    else:
-        return print('!!! Ошибка: введенное число должно быть трехзначным!')
+    try:
+        if (int(number) < 0):
+            number = number[1:len(number)]
+        if (99 < int(number) < 1000):
+            sum = 0
+            for i in number:
+                sum += int(i)
+            return print(f'Результат: {sum}')
+        else:
+            return print('!!! Ошибка: введенное число должно быть трехзначным!')
+    except:
+        print("Некорректный ввод")
+
 sum(number)
 print()
 
